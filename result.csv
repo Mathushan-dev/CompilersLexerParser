@@ -1,0 +1,4283 @@
+
+tests/open/n-func-return-type-0.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --fibonacci--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 15 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 16 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 1 col: 19 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 20 match: --pos--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 23 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 24 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 25 match: --:--
+action [90] { return symbol(sym.COLON); }
+Syntax error at line 1, column 24.
+tests/open/p-thread.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 1 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 14 match: --\u000A    --
+action [137] { /* do nothing */ }
+line: 2 col: 5 match: --thread--
+action [71] { return symbol(sym.THREAD); }
+line: 2 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 12 match: --t1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 15 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 2 col: 17 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 18 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 2 col: 19 match: --\u000A        --
+action [137] { /* do nothing */ }
+line: 3 col: 9 match: --print--
+action [74] { return symbol(sym.PRINT); }
+line: 3 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 15 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 3 col: 16 match: --Hello from thread 1!--
+action [143] { string.append(yytext()); }
+line: 3 col: 36 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 3 col: 37 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 38 match: --\u000A    --
+action [137] { /* do nothing */ }
+line: 4 col: 5 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 4 col: 6 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 4 col: 7 match: --\u000A    --
+action [137] { /* do nothing */ }
+line: 5 col: 5 match: --thread--
+action [71] { return symbol(sym.THREAD); }
+line: 5 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 12 match: --t2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 5 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 15 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 5 col: 17 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 18 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 5 col: 19 match: --       \u000A        --
+action [137] { /* do nothing */ }
+line: 6 col: 9 match: --print--
+action [74] { return symbol(sym.PRINT); }
+line: 6 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 6 col: 15 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 6 col: 16 match: --Hello from thread 2!--
+action [143] { string.append(yytext()); }
+line: 6 col: 36 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 6 col: 37 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 6 col: 38 match: --\u000A    --
+action [137] { /* do nothing */ }
+line: 7 col: 5 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 7 col: 6 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 7 col: 7 match: --\u000A    --
+action [137] { /* do nothing */ }
+line: 8 col: 5 match: --wait--
+action [72] { return symbol(sym.WAIT); }
+line: 8 col: 9 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 8 col: 10 match: --t1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 8 col: 12 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 8 col: 13 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 8 col: 14 match: -- \u000A    --
+action [137] { /* do nothing */ }
+line: 9 col: 5 match: --wait--
+action [72] { return symbol(sym.WAIT); }
+line: 9 col: 9 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 9 col: 10 match: --t2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 9 col: 12 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 9 col: 13 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 9 col: 14 match: --\u000A    --
+action [137] { /* do nothing */ }
+line: 10 col: 5 match: --print--
+action [74] { return symbol(sym.PRINT); }
+line: 10 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 10 col: 11 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 10 col: 12 match: --Multithreaded program ends.--
+action [143] { string.append(yytext()); }
+line: 10 col: 39 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 10 col: 40 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 10 col: 41 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 11 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 11 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+Parsing successful.
+tests/open/p-main.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 1 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 14 match: -- \u000A  --
+action [137] { /* do nothing */ }
+line: 2 col: 3 match: --print--
+action [74] { return symbol(sym.PRINT); }
+line: 2 col: 8 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 9 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 2 col: 10 match: --Hello world!--
+action [143] { string.append(yytext()); }
+line: 2 col: 22 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 2 col: 23 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 2 col: 24 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 3 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 3 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 3 match: --\u000A--
+action [137] { /* do nothing */ }
+Parsing successful.
+tests/open/p-listcomp.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --seq--
+action [52] { return symbol(sym.SEQ_TYPE); }
+line: 1 col: 9 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 1 col: 10 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 1 col: 13 match: -->--
+action [91] { return symbol(sym.GREATTHAN); }
+line: 1 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 15 match: --upto--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 19 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 20 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 21 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 1 col: 24 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 25 match: --lim--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 28 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 1 col: 29 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 30 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 1 col: 33 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 34 match: --step--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 38 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 39 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 40 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 41 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 2 col: 3 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 2 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 10 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 2 col: 11 match: --x--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 13 match: --for--
+action [66] { return symbol(sym.FOR); }
+line: 2 col: 16 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 17 match: --x--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 18 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 19 match: --of--
+action [67] { return symbol(sym.OF); }
+line: 2 col: 21 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 22 match: --range--
+action [65] { return symbol(sym.RANGE); }
+line: 2 col: 27 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 2 col: 28 match: --0--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 29 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 30 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 31 match: --lim--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 34 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 35 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 36 match: --step--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 40 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 2 col: 41 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 2 col: 42 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 2 col: 43 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 3 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 3 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 3 match: --\u000A\u000A--
+action [137] { /* do nothing */ }
+line: 5 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 5 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 5 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 5 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 5 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 5 col: 14 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 6 col: 2 match: --print--
+action [74] { return symbol(sym.PRINT); }
+line: 6 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 6 col: 8 match: --upto--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 6 col: 12 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 6 col: 13 match: -- --
+action [137] { /* do nothing */ }
+line: 6 col: 14 match: --13--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 6 col: 16 match: -- --
+action [137] { /* do nothing */ }
+line: 6 col: 17 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 6 col: 18 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 6 col: 19 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 7 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 7 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 7 col: 3 match: --\u000A--
+action [137] { /* do nothing */ }
+Parsing successful.
+tests/open/p-seq-empty.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 1 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 14 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 2 col: 2 match: --seq--
+action [52] { return symbol(sym.SEQ_TYPE); }
+line: 2 col: 5 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 2 col: 6 match: --char--
+action [49] { return symbol(sym.CHAR_TYPE); }
+line: 2 col: 10 match: -->--
+action [91] { return symbol(sym.GREATTHAN); }
+line: 2 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 12 match: --x--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 13 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 14 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 2 col: 16 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 17 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 2 col: 18 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 2 col: 19 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 2 col: 20 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 3 col: 2 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 3 col: 8 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 9 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 4 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 4 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 4 col: 3 match: --\u000A--
+action [137] { /* do nothing */ }
+Parsing successful.
+tests/open/p-tdef.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 1 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 14 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 2 col: 2 match: --tdef--
+action [69] { return symbol(sym.TDEF); }
+line: 2 col: 6 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 7 match: --person--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 13 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 14 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 2 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 16 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 2 col: 19 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 20 match: --name--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 24 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 25 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 26 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 2 col: 29 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 30 match: --surname--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 37 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 38 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 39 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 2 col: 42 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 43 match: --age--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 46 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 47 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 2 col: 48 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 2 col: 49 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 3 col: 2 match: --tdef--
+action [69] { return symbol(sym.TDEF); }
+line: 3 col: 6 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 7 match: --family--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 3 col: 13 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 14 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 3 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 16 match: --person--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 3 col: 22 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 23 match: --mother--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 3 col: 29 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 3 col: 30 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 31 match: --person--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 3 col: 37 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 38 match: --father--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 3 col: 44 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 3 col: 45 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 46 match: --seq--
+action [52] { return symbol(sym.SEQ_TYPE); }
+line: 3 col: 49 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 3 col: 50 match: --person--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 3 col: 56 match: -->--
+action [91] { return symbol(sym.GREATTHAN); }
+line: 3 col: 57 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 58 match: --children--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 3 col: 66 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 67 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 3 col: 68 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 69 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 4 col: 2 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 4 col: 8 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 4 col: 9 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 5 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 5 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 5 col: 3 match: --\u000A--
+action [137] { /* do nothing */ }
+Parsing successful.
+tests/open/p-break.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 1 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 14 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 2 col: 2 match: --seq--
+action [52] { return symbol(sym.SEQ_TYPE); }
+line: 2 col: 5 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 2 col: 6 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 2 col: 9 match: -->--
+action [91] { return symbol(sym.GREATTHAN); }
+line: 2 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 11 match: --a--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 13 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 2 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 16 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 2 col: 17 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 18 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 19 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 20 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 21 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 22 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 23 match: --3--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 24 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 2 col: 25 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 2 col: 26 match: -- \u000A\u0009--
+action [137] { /* do nothing */ }
+line: 3 col: 2 match: --seq--
+action [52] { return symbol(sym.SEQ_TYPE); }
+line: 3 col: 5 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 3 col: 6 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 3 col: 9 match: -->--
+action [91] { return symbol(sym.GREATTHAN); }
+line: 3 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 11 match: --b--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 3 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 13 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 3 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 16 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 3 col: 17 match: --4--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 3 col: 18 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 3 col: 19 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 20 match: --5--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 3 col: 21 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 3 col: 22 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 23 match: --6--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 3 col: 24 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 3 col: 25 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 26 match: -- \u000A\u0009--
+action [137] { /* do nothing */ }
+line: 4 col: 2 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 4 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 4 col: 6 match: --i--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 4 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 4 col: 8 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 4 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 4 col: 11 match: --0--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 4 col: 12 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 4 col: 13 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 5 col: 2 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 5 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 6 match: --j--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 5 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 8 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 5 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 11 match: --0--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 5 col: 12 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 5 col: 13 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 6 col: 2 match: --while--
+action [63] { return symbol(sym.WHILE); }
+line: 6 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 6 col: 8 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 6 col: 9 match: --\u000A\u0009\u0009--
+action [137] { /* do nothing */ }
+line: 7 col: 3 match: --if--
+action [60] { return symbol(sym.IF); }
+line: 7 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 7 col: 6 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 7 col: 7 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 7 col: 8 match: -- --
+action [137] { /* do nothing */ }
+line: 7 col: 9 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 7 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 7 col: 11 match: --i--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 7 col: 12 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 7 col: 13 match: -- --
+action [137] { /* do nothing */ }
+line: 7 col: 14 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 7 col: 15 match: --\u000A\u0009\u0009\u0009--
+action [137] { /* do nothing */ }
+line: 8 col: 4 match: --break--
+action [64] { return symbol(sym.BREAK); }
+line: 8 col: 9 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 8 col: 10 match: -- \u000A\u0009\u0009--
+action [137] { /* do nothing */ }
+line: 9 col: 3 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 9 col: 4 match: --\u000A\u0009\u0009--
+action [137] { /* do nothing */ }
+line: 10 col: 3 match: --while--
+action [63] { return symbol(sym.WHILE); }
+line: 10 col: 8 match: -- --
+action [137] { /* do nothing */ }
+line: 10 col: 9 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 10 col: 10 match: --\u000A\u0009\u0009\u0009--
+action [137] { /* do nothing */ }
+line: 11 col: 4 match: --if--
+action [60] { return symbol(sym.IF); }
+line: 11 col: 6 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 7 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 11 col: 8 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 11 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 10 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 11 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 12 match: --j--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 11 col: 13 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 11 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 15 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 11 col: 16 match: --\u000A\u0009\u0009\u0009\u0009--
+action [137] { /* do nothing */ }
+line: 12 col: 5 match: --break--
+action [64] { return symbol(sym.BREAK); }
+line: 12 col: 10 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 12 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 12 col: 12 match: --# break to the outer loop \u000A--
+action [137] { /* do nothing */ }
+line: 13 col: 1 match: --\u0009\u0009\u0009--
+action [137] { /* do nothing */ }
+line: 13 col: 4 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 13 col: 5 match: --\u000A\u0009\u0009\u0009--
+action [137] { /* do nothing */ }
+line: 14 col: 4 match: --if--
+action [60] { return symbol(sym.IF); }
+line: 14 col: 6 match: -- --
+action [137] { /* do nothing */ }
+line: 14 col: 7 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 14 col: 8 match: --b--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 14 col: 9 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 14 col: 10 match: --j--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 14 col: 11 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 14 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 14 col: 13 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 14 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 14 col: 15 match: --a--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 14 col: 16 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 14 col: 17 match: --i--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 14 col: 18 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 14 col: 19 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 14 col: 20 match: -- --
+action [137] { /* do nothing */ }
+line: 14 col: 21 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 14 col: 22 match: --\u000A\u0009\u0009\u0009\u0009--
+action [137] { /* do nothing */ }
+line: 15 col: 5 match: --break--
+action [64] { return symbol(sym.BREAK); }
+line: 15 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 11 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 15 col: 12 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 15 col: 13 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 14 match: --# break out of two loops\u000A--
+action [137] { /* do nothing */ }
+line: 16 col: 1 match: --\u0009\u0009\u0009--
+action [137] { /* do nothing */ }
+line: 16 col: 4 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 16 col: 5 match: --\u000A\u0009\u0009\u0009--
+action [137] { /* do nothing */ }
+line: 17 col: 4 match: --j--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 17 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 6 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 17 col: 8 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 9 match: --j--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 17 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 11 match: --+--
+action [104] { return symbol(sym.PLUS); }
+line: 17 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 13 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 17 col: 14 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 17 col: 15 match: --\u000A\u0009\u0009--
+action [137] { /* do nothing */ }
+line: 18 col: 3 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 18 col: 4 match: --\u000A\u0009\u0009--
+action [137] { /* do nothing */ }
+line: 19 col: 3 match: --i--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 19 col: 4 match: -- --
+action [137] { /* do nothing */ }
+line: 19 col: 5 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 19 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 19 col: 8 match: --i--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 19 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 19 col: 10 match: --+--
+action [104] { return symbol(sym.PLUS); }
+line: 19 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 19 col: 12 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 19 col: 13 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 19 col: 14 match: --\u000A\u0009\u0009--
+action [137] { /* do nothing */ }
+line: 20 col: 3 match: --j--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 20 col: 4 match: -- --
+action [137] { /* do nothing */ }
+line: 20 col: 5 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 20 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 20 col: 8 match: --0--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 20 col: 9 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 20 col: 10 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 21 col: 2 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 21 col: 3 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 22 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 22 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 22 col: 3 match: --\u000A--
+action [137] { /* do nothing */ }
+Parsing successful.
+tests/open/p-seq.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 1 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 14 match: --\u000A    --
+action [137] { /* do nothing */ }
+line: 2 col: 5 match: --seq--
+action [52] { return symbol(sym.SEQ_TYPE); }
+line: 2 col: 8 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 2 col: 9 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 2 col: 12 match: -->--
+action [91] { return symbol(sym.GREATTHAN); }
+line: 2 col: 13 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 14 match: --x--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 16 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 2 col: 18 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 19 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 2 col: 20 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 21 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 22 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 23 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 24 match: --3--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 25 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 2 col: 26 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 2 col: 27 match: -- \u000A    --
+action [137] { /* do nothing */ }
+line: 3 col: 5 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 3 col: 11 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 12 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 4 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 4 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 4 col: 3 match: --\u000A--
+action [137] { /* do nothing */ }
+Parsing successful.
+tests/open/n-if-else-0.s
+line: 1 col: 1 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 1 col: 4 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 5 match: --s1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 8 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 1 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 11 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 1 col: 12 match: --Alice in Wonderland--
+action [143] { string.append(yytext()); }
+line: 1 col: 31 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 1 col: 32 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 1 col: 33 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 2 col: 1 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 2 col: 4 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 5 match: --s2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 8 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 2 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 11 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 2 col: 12 match: --Gilgamesh--
+action [143] { string.append(yytext()); }
+line: 2 col: 21 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 2 col: 22 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 2 col: 23 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 3 col: 1 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 3 col: 4 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 5 match: --s3--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 3 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 8 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 3 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 11 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 3 col: 12 match: --One Thousand and One Nights--
+action [143] { string.append(yytext()); }
+line: 3 col: 39 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 3 col: 40 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 41 match: --\u000A\u000A--
+action [137] { /* do nothing */ }
+line: 5 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 5 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 5 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 5 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 5 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 5 col: 14 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 6 col: 3 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 6 col: 6 match: -- --
+action [137] { /* do nothing */ }
+line: 6 col: 7 match: --key--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 6 col: 10 match: --:--
+action [90] { return symbol(sym.COLON); }
+Syntax error at line 6, column 9.
+tests/open/p-func.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 1 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 10 match: --sum--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 13 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 14 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 1 col: 17 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 18 match: --i--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 19 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 1 col: 20 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 21 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 1 col: 24 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 25 match: --j--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 26 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 27 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 28 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 29 match: --\u000A     --
+action [137] { /* do nothing */ }
+line: 2 col: 6 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 2 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 13 match: --i--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 15 match: --+--
+action [104] { return symbol(sym.PLUS); }
+line: 2 col: 16 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 17 match: --j--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 18 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 2 col: 19 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 3 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 3 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 3 match: --\u000A\u000A--
+action [137] { /* do nothing */ }
+line: 5 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 5 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 6 match: --float--
+action [48] { return symbol(sym.FLOAT_TYPE); }
+line: 5 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 12 match: --sum--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 5 col: 15 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 5 col: 16 match: --float--
+action [48] { return symbol(sym.FLOAT_TYPE); }
+line: 5 col: 21 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 22 match: --i--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 5 col: 23 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 5 col: 24 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 25 match: --float--
+action [48] { return symbol(sym.FLOAT_TYPE); }
+line: 5 col: 30 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 31 match: --j--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 5 col: 32 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 5 col: 33 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 34 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 5 col: 35 match: --\u000A     --
+action [137] { /* do nothing */ }
+line: 6 col: 6 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 6 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 6 col: 13 match: --i--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 6 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 6 col: 15 match: --+--
+action [104] { return symbol(sym.PLUS); }
+line: 6 col: 16 match: -- --
+action [137] { /* do nothing */ }
+line: 6 col: 17 match: --j--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 6 col: 18 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 6 col: 19 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 7 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 7 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 7 col: 3 match: --\u000A\u000A--
+action [137] { /* do nothing */ }
+line: 9 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 9 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 9 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 9 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 9 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 9 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 9 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 9 col: 14 match: --\u000A\u000A  --
+action [137] { /* do nothing */ }
+line: 11 col: 3 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 11 col: 6 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 7 match: --s1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 11 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 10 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 11 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 13 match: --sum--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 11 col: 16 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 11 col: 17 match: -----
+action [105] { return symbol(sym.MINUS); }
+line: 11 col: 18 match: --10--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 11 col: 20 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 11 col: 21 match: --20--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 11 col: 23 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 11 col: 24 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 11 col: 25 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 12 col: 3 match: --float--
+action [48] { return symbol(sym.FLOAT_TYPE); }
+line: 12 col: 8 match: -- --
+action [137] { /* do nothing */ }
+line: 12 col: 9 match: --s2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 12 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 12 col: 12 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 12 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 12 col: 15 match: --sum--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 12 col: 18 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 12 col: 19 match: --10.0--
+action [126] { return symbol(sym.FLOAT, new Double(yytext())); }
+line: 12 col: 23 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 12 col: 24 match: -----
+action [105] { return symbol(sym.MINUS); }
+line: 12 col: 25 match: --20.0--
+action [126] { return symbol(sym.FLOAT, new Double(yytext())); }
+line: 12 col: 29 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 12 col: 30 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 12 col: 31 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 13 col: 3 match: --bool--
+action [45] { return symbol(sym.BOOL_TYPE); }
+line: 13 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 13 col: 8 match: --b--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 13 col: 9 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 13 col: 10 match: --\u000A\u000A  --
+action [137] { /* do nothing */ }
+line: 15 col: 3 match: --if--
+action [60] { return symbol(sym.IF); }
+line: 15 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 6 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 15 col: 7 match: --s1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 15 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 10 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 15 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 12 match: --s2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 15 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 15 match: --||--
+action [103] { return symbol(sym.OR); }
+line: 15 col: 17 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 18 match: --s1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 15 col: 20 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 21 match: --=--
+action [113] { return symbol(sym.EQUAL); }
+line: 15 col: 22 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 23 match: --s2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 15 col: 25 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 15 col: 26 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 27 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 15 col: 28 match: --\u000A     --
+action [137] { /* do nothing */ }
+line: 16 col: 6 match: --b--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 16 col: 7 match: --  --
+action [137] { /* do nothing */ }
+line: 16 col: 9 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 16 col: 11 match: --  --
+action [137] { /* do nothing */ }
+line: 16 col: 13 match: --s1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 16 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 16 col: 16 match: --+--
+action [104] { return symbol(sym.PLUS); }
+line: 16 col: 17 match: -- --
+action [137] { /* do nothing */ }
+line: 16 col: 18 match: --s2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 16 col: 20 match: -- --
+action [137] { /* do nothing */ }
+line: 16 col: 21 match: --/--
+action [107] { return symbol(sym.DIVIDE); }
+line: 16 col: 22 match: -- --
+action [137] { /* do nothing */ }
+line: 16 col: 23 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 16 col: 24 match: --s1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 16 col: 26 match: -- --
+action [137] { /* do nothing */ }
+line: 16 col: 27 match: --+--
+action [104] { return symbol(sym.PLUS); }
+line: 16 col: 28 match: -- --
+action [137] { /* do nothing */ }
+line: 16 col: 29 match: --s2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 16 col: 31 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 16 col: 32 match: -- --
+action [137] { /* do nothing */ }
+line: 16 col: 33 match: --<=--
+action [111] { return symbol(sym.LESSTHANEQUAL); }
+line: 16 col: 35 match: -- --
+action [137] { /* do nothing */ }
+line: 16 col: 36 match: --30--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 16 col: 38 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 16 col: 39 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 17 col: 3 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 17 col: 4 match: --\u000A\u000A  --
+action [137] { /* do nothing */ }
+line: 19 col: 3 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 19 col: 9 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 19 col: 10 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 20 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 20 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 20 col: 3 match: --\u000A--
+action [137] { /* do nothing */ }
+Parsing successful.
+tests/open/p-float.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 1 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 14 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 2 col: 2 match: --float--
+action [48] { return symbol(sym.FLOAT_TYPE); }
+line: 2 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 8 match: --x--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 10 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 2 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 13 match: -----
+action [105] { return symbol(sym.MINUS); }
+line: 2 col: 14 match: --3.0--
+action [126] { return symbol(sym.FLOAT, new Double(yytext())); }
+line: 2 col: 17 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 2 col: 18 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 3 col: 2 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 3 col: 8 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 9 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 4 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 4 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 4 col: 3 match: --\u000A--
+action [137] { /* do nothing */ }
+Parsing successful.
+tests/open/p-assign.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 1 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 14 match: --\u000A    --
+action [137] { /* do nothing */ }
+line: 2 col: 5 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 2 col: 8 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 9 match: --foo--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 13 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 2 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 16 match: --3--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 17 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 2 col: 18 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 3 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 3 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 3 match: --\u000A--
+action [137] { /* do nothing */ }
+Parsing successful.
+tests/open/p-singlelinecomment.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 1 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 14 match: -- \u000A  --
+action [137] { /* do nothing */ }
+line: 2 col: 3 match: --# print "break";\u000A--
+action [137] { /* do nothing */ }
+line: 3 col: 1 match: --  --
+action [137] { /* do nothing */ }
+line: 3 col: 3 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 3 col: 9 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 10 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 4 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 4 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 4 col: 3 match: --\u000A--
+action [137] { /* do nothing */ }
+Parsing successful.
+tests/open/p-rat.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 1 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 14 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 2 col: 2 match: --rat--
+action [47] { return symbol(sym.RAT_TYPE); }
+line: 2 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 6 match: --x--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 8 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 2 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 11 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 13 match: --/--
+action [107] { return symbol(sym.DIVIDE); }
+line: 2 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 15 match: --3--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 16 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 2 col: 17 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 3 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 3 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 3 match: --\u000A--
+action [137] { /* do nothing */ }
+Parsing successful.
+tests/open/n-struct-inline-tdef.s
+line: 1 col: 1 match: --tdef--
+action [69] { return symbol(sym.TDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --person--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 14 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 1 col: 17 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 18 match: --name--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 22 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 1 col: 23 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 24 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 1 col: 27 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 28 match: --surname--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 35 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 1 col: 36 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 37 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 1 col: 40 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 41 match: --age--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 44 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 1 col: 45 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 1 col: 46 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 47 match: --# person definition\u000A--
+action [137] { /* do nothing */ }
+line: 2 col: 1 match: --tdef--
+action [69] { return symbol(sym.TDEF); }
+line: 2 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 6 match: --family--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 2 col: 14 match: --tdef--
+action [69] { return symbol(sym.TDEF); }
+Syntax error at line 2, column 13.
+tests/open/n-dict-unbalanced.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 1 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 14 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 2 col: 3 match: --dict--
+action [51] { return symbol(sym.DICT_TYPE); }
+line: 2 col: 7 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 2 col: 8 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 2 col: 11 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 12 match: --string--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 18 match: -->--
+action [91] { return symbol(sym.GREATTHAN); }
+line: 2 col: 19 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 20 match: --d1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 22 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 23 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 2 col: 25 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 26 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 2 col: 27 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 28 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 2 col: 29 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 2 col: 30 match: --a--
+action [143] { string.append(yytext()); }
+line: 2 col: 31 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 2 col: 32 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 33 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 34 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 35 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 2 col: 36 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 2 col: 37 match: --b--
+action [143] { string.append(yytext()); }
+line: 2 col: 38 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 2 col: 39 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 40 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 41 match: --3--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 42 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 2 col: 43 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 2 col: 44 match: --c--
+action [143] { string.append(yytext()); }
+line: 2 col: 45 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 2 col: 46 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 47 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 48 match: --4--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 49 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 2 col: 50 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 2 col: 51 match: --d--
+action [143] { string.append(yytext()); }
+line: 2 col: 52 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 2 col: 53 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 54 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 55 match: --5--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 56 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 2 col: 57 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 2 col: 58 match: --e--
+action [143] { string.append(yytext()); }
+line: 2 col: 59 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 2 col: 60 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 2 col: 61 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 2 col: 62 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 3 col: 3 match: --dict--
+action [51] { return symbol(sym.DICT_TYPE); }
+line: 3 col: 7 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 3 col: 8 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 3 col: 11 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 3 col: 12 match: --string--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 3 col: 18 match: -->--
+action [91] { return symbol(sym.GREATTHAN); }
+line: 3 col: 19 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 20 match: --d2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 3 col: 22 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 23 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 3 col: 25 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 26 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 3 col: 27 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 3 col: 28 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 3 col: 29 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 3 col: 30 match: --a--
+action [143] { string.append(yytext()); }
+line: 3 col: 31 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 3 col: 32 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 3 col: 33 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 3 col: 34 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 3 col: 35 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 3 col: 36 match: --b--
+action [143] { string.append(yytext()); }
+line: 3 col: 37 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 3 col: 38 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 3 col: 39 match: --3--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 3 col: 40 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 3 col: 41 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 3 col: 42 match: --c--
+action [143] { string.append(yytext()); }
+line: 3 col: 43 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 3 col: 44 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 3 col: 45 match: --4--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 3 col: 46 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 3 col: 47 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 3 col: 48 match: --d--
+action [143] { string.append(yytext()); }
+line: 3 col: 49 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 3 col: 50 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 3 col: 51 match: --5--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 3 col: 52 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 3 col: 53 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 3 col: 54 match: --e--
+action [143] { string.append(yytext()); }
+line: 3 col: 55 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 3 col: 56 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 3 col: 57 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 58 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 4 col: 3 match: --dict--
+action [51] { return symbol(sym.DICT_TYPE); }
+line: 4 col: 7 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 4 col: 8 match: --top--
+action [53] { return symbol(sym.ANY_TYPE); }
+line: 4 col: 11 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 4 col: 12 match: --char--
+action [49] { return symbol(sym.CHAR_TYPE); }
+line: 4 col: 16 match: -->--
+action [91] { return symbol(sym.GREATTHAN); }
+line: 4 col: 17 match: -- --
+action [137] { /* do nothing */ }
+line: 4 col: 18 match: --d3--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 4 col: 20 match: -- --
+action [137] { /* do nothing */ }
+line: 4 col: 21 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 4 col: 23 match: -- --
+action [137] { /* do nothing */ }
+line: 4 col: 24 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 4 col: 25 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 4 col: 26 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 4 col: 27 match: --'a'--
+action [129] { return symbol(sym.CHAR, new Character(yytext().charAt(1))); }
+line: 4 col: 30 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 4 col: 31 match: -- --
+action [137] { /* do nothing */ }
+line: 4 col: 32 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 4 col: 33 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 4 col: 34 match: --'b'--
+action [129] { return symbol(sym.CHAR, new Character(yytext().charAt(1))); }
+line: 4 col: 37 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 4 col: 38 match: -- --
+action [137] { /* do nothing */ }
+line: 4 col: 39 match: --3.0--
+action [126] { return symbol(sym.FLOAT, new Double(yytext())); }
+line: 4 col: 42 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 4 col: 43 match: --'c'--
+action [129] { return symbol(sym.CHAR, new Character(yytext().charAt(1))); }
+line: 4 col: 46 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 4 col: 47 match: -- --
+action [137] { /* do nothing */ }
+line: 4 col: 48 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 4 col: 49 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 4 col: 50 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 4 col: 51 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 4 col: 52 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 4 col: 53 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 4 col: 54 match: --'d'--
+action [129] { return symbol(sym.CHAR, new Character(yytext().charAt(1))); }
+line: 4 col: 57 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 4 col: 58 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 4 col: 59 match: -- \u000A  --
+action [137] { /* do nothing */ }
+line: 5 col: 3 match: --dict--
+action [51] { return symbol(sym.DICT_TYPE); }
+line: 5 col: 7 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 5 col: 8 match: --char--
+action [49] { return symbol(sym.CHAR_TYPE); }
+line: 5 col: 12 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 5 col: 13 match: --top--
+action [53] { return symbol(sym.ANY_TYPE); }
+line: 5 col: 16 match: -->--
+action [91] { return symbol(sym.GREATTHAN); }
+line: 5 col: 17 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 18 match: --d4--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 5 col: 20 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 21 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 5 col: 23 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 24 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 5 col: 25 match: --'a'--
+action [129] { return symbol(sym.CHAR, new Character(yytext().charAt(1))); }
+line: 5 col: 28 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 5 col: 29 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 5 col: 30 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 5 col: 31 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 5 col: 32 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 5 col: 33 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 5 col: 34 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 5 col: 35 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 5 col: 36 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 5 col: 37 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 5 col: 38 match: --3--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 5 col: 39 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 5 col: 40 match: --3--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 5 col: 41 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 5 col: 42 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 5 col: 43 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 44 match: --'b'--
+action [129] { return symbol(sym.CHAR, new Character(yytext().charAt(1))); }
+line: 5 col: 47 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 5 col: 48 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 5 col: 49 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 5 col: 50 match: --x--
+action [143] { string.append(yytext()); }
+line: 5 col: 51 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 5 col: 52 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 5 col: 53 match: --4--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 5 col: 54 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 5 col: 55 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 5 col: 56 match: --y--
+action [143] { string.append(yytext()); }
+line: 5 col: 57 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 5 col: 58 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 5 col: 59 match: --5--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 5 col: 60 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 5 col: 61 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 5 col: 62 match: --z--
+action [143] { string.append(yytext()); }
+line: 5 col: 63 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 5 col: 64 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 5 col: 65 match: --6--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 5 col: 66 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 5 col: 67 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+Syntax error at line 5, column 66.
+tests/open/p-multilinecomment.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --sum--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 9 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 10 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 1 col: 13 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 14 match: --i--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 15 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 1 col: 16 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 17 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 1 col: 20 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 21 match: --j--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 22 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 23 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 24 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 25 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 2 col: 3 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 2 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 10 match: --i--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 12 match: --+--
+action [104] { return symbol(sym.PLUS); }
+line: 2 col: 13 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 14 match: --j--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 15 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 2 col: 16 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 3 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 3 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 3 match: --\u000A\u000A--
+action [137] { /* do nothing */ }
+line: 5 col: 1 match: --/#\u000Afdef float mult(i:x L, j:float H) {\u000A  return i * j;\u000A};\u000A#/--
+action [137] { /* do nothing */ }
+line: 9 col: 3 match: --\u000A\u000A--
+action [137] { /* do nothing */ }
+line: 11 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 11 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 11 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 11 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 11 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 11 col: 14 match: --\u000A\u000A  --
+action [137] { /* do nothing */ }
+line: 13 col: 3 match: --bool--
+action [45] { return symbol(sym.BOOL_TYPE); }
+line: 13 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 13 col: 8 match: --b--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 13 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 13 col: 10 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 13 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 13 col: 13 match: --F--
+action [124] { return symbol(sym.FALSE); }
+line: 13 col: 14 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 13 col: 15 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 14 col: 3 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 14 col: 6 match: -- --
+action [137] { /* do nothing */ }
+line: 14 col: 7 match: --s1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 14 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 14 col: 10 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 14 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 14 col: 13 match: --sum--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 14 col: 16 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 14 col: 17 match: -----
+action [105] { return symbol(sym.MINUS); }
+line: 14 col: 18 match: --10--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 14 col: 20 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 14 col: 21 match: --20--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 14 col: 23 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 14 col: 24 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 14 col: 25 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 15 col: 3 match: --float--
+action [48] { return symbol(sym.FLOAT_TYPE); }
+line: 15 col: 8 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 9 match: --s2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 15 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 12 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 15 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 15 match: --sum--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 15 col: 18 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 15 col: 19 match: --10.0--
+action [126] { return symbol(sym.FLOAT, new Double(yytext())); }
+line: 15 col: 23 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 15 col: 24 match: -----
+action [105] { return symbol(sym.MINUS); }
+line: 15 col: 25 match: --20.0--
+action [126] { return symbol(sym.FLOAT, new Double(yytext())); }
+line: 15 col: 29 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 15 col: 30 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 15 col: 31 match: --\u000A  \u000A  --
+action [137] { /* do nothing */ }
+line: 17 col: 3 match: --if--
+action [60] { return symbol(sym.IF); }
+line: 17 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 6 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 17 col: 7 match: --s1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 17 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 10 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 17 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 12 match: --s2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 17 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 15 match: --||--
+action [103] { return symbol(sym.OR); }
+line: 17 col: 17 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 18 match: --s1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 17 col: 20 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 21 match: --=--
+action [113] { return symbol(sym.EQUAL); }
+line: 17 col: 22 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 23 match: --s2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 17 col: 25 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 17 col: 26 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 27 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 17 col: 28 match: --\u000A     --
+action [137] { /* do nothing */ }
+line: 18 col: 6 match: --b--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 18 col: 7 match: --  --
+action [137] { /* do nothing */ }
+line: 18 col: 9 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 18 col: 11 match: --  --
+action [137] { /* do nothing */ }
+line: 18 col: 13 match: --30--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 18 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 18 col: 16 match: --<=--
+action [111] { return symbol(sym.LESSTHANEQUAL); }
+line: 18 col: 18 match: -- --
+action [137] { /* do nothing */ }
+line: 18 col: 19 match: --s1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 18 col: 21 match: -- --
+action [137] { /* do nothing */ }
+line: 18 col: 22 match: --+--
+action [104] { return symbol(sym.PLUS); }
+line: 18 col: 23 match: -- --
+action [137] { /* do nothing */ }
+line: 18 col: 24 match: --s2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 18 col: 26 match: -- --
+action [137] { /* do nothing */ }
+line: 18 col: 27 match: --/--
+action [107] { return symbol(sym.DIVIDE); }
+line: 18 col: 28 match: -- --
+action [137] { /* do nothing */ }
+line: 18 col: 29 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 18 col: 30 match: --s1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 18 col: 32 match: -- --
+action [137] { /* do nothing */ }
+line: 18 col: 33 match: --+--
+action [104] { return symbol(sym.PLUS); }
+line: 18 col: 34 match: -- --
+action [137] { /* do nothing */ }
+line: 18 col: 35 match: --s2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 18 col: 37 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 18 col: 38 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 18 col: 39 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 19 col: 3 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 19 col: 4 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 20 col: 3 match: --else--
+action [62] { return symbol(sym.ELSE); }
+line: 20 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 20 col: 8 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 20 col: 9 match: -- \u000A     --
+action [137] { /* do nothing */ }
+line: 21 col: 6 match: --print--
+action [74] { return symbol(sym.PRINT); }
+line: 21 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 21 col: 12 match: --b--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 21 col: 13 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 21 col: 14 match: --\u000A     --
+action [137] { /* do nothing */ }
+line: 22 col: 6 match: --/# do something else #/--
+action [137] { /* do nothing */ }
+line: 22 col: 29 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 23 col: 3 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 23 col: 4 match: --\u000A\u000A  --
+action [137] { /* do nothing */ }
+line: 25 col: 3 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 25 col: 9 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 25 col: 10 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 26 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 26 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 26 col: 3 match: --\u000A--
+action [137] { /* do nothing */ }
+Parsing successful.
+tests/open/p-seq-nested.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 1 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 14 match: --\u000A    --
+action [137] { /* do nothing */ }
+line: 2 col: 5 match: --seq--
+action [52] { return symbol(sym.SEQ_TYPE); }
+line: 2 col: 8 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 2 col: 9 match: --seq--
+action [52] { return symbol(sym.SEQ_TYPE); }
+line: 2 col: 12 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 2 col: 13 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 2 col: 16 match: -->--
+action [91] { return symbol(sym.GREATTHAN); }
+line: 2 col: 17 match: -->--
+action [91] { return symbol(sym.GREATTHAN); }
+line: 2 col: 18 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 19 match: --x--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 20 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 21 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 2 col: 23 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 24 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 2 col: 25 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 2 col: 26 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 27 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 28 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 29 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 30 match: --3--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 31 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 2 col: 32 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 33 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 34 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 2 col: 35 match: --4--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 36 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 37 match: --5--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 38 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 39 match: --6--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 40 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 2 col: 41 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 2 col: 42 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 2 col: 43 match: -- \u000A    --
+action [137] { /* do nothing */ }
+line: 3 col: 5 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 3 col: 11 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 12 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 4 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 4 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 4 col: 3 match: --\u000A--
+action [137] { /* do nothing */ }
+Parsing successful.
+tests/open/n-func-return-type-1.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --fibonacci--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 15 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 16 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 1 col: 19 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 20 match: --pos--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 23 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 24 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 25 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 26 match: -- \u000A\u0009--
+action [137] { /* do nothing */ }
+line: 2 col: 2 match: --if--
+action [60] { return symbol(sym.IF); }
+line: 2 col: 4 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 5 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 2 col: 6 match: --pos--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 10 match: --=--
+action [113] { return symbol(sym.EQUAL); }
+line: 2 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 12 match: -----
+action [105] { return symbol(sym.MINUS); }
+line: 2 col: 13 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 14 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 2 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 16 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 2 col: 17 match: --\u000A\u0009\u0009--
+action [137] { /* do nothing */ }
+line: 3 col: 3 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 3 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 10 match: --0--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 3 col: 11 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 12 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 4 col: 2 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 4 col: 3 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 5 col: 2 match: --if--
+action [60] { return symbol(sym.IF); }
+line: 5 col: 4 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 5 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 5 col: 6 match: --pos--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 5 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 10 match: --=--
+action [113] { return symbol(sym.EQUAL); }
+line: 5 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 12 match: --0--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 5 col: 13 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 5 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 15 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 5 col: 16 match: --\u000A\u0009\u0009--
+action [137] { /* do nothing */ }
+line: 6 col: 3 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 6 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 6 col: 10 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 6 col: 11 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 6 col: 12 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 7 col: 2 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 7 col: 3 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 8 col: 2 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 8 col: 8 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 9 match: --fibonacci--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 8 col: 18 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 8 col: 19 match: --pos--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 8 col: 22 match: -----
+action [105] { return symbol(sym.MINUS); }
+line: 8 col: 23 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 8 col: 24 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 8 col: 25 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 26 match: --+--
+action [104] { return symbol(sym.PLUS); }
+line: 8 col: 27 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 28 match: --fibonacci--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 8 col: 37 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 8 col: 38 match: --pos--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 8 col: 41 match: -----
+action [105] { return symbol(sym.MINUS); }
+line: 8 col: 42 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 8 col: 43 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 8 col: 44 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 8 col: 45 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 9 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 9 col: 2 match: -- --
+action [137] { /* do nothing */ }
+line: 9 col: 3 match: --:--
+action [90] { return symbol(sym.COLON); }
+Syntax error at line 9, column 2.
+tests/open/p-dict.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --dict--
+action [51] { return symbol(sym.DICT_TYPE); }
+line: 1 col: 10 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 1 col: 11 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 1 col: 14 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 1 col: 15 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 1 col: 18 match: -->--
+action [91] { return symbol(sym.GREATTHAN); }
+line: 1 col: 19 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 20 match: --make_dict--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 29 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 30 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 31 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 32 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 33 match: --\u000A   --
+action [137] { /* do nothing */ }
+line: 2 col: 4 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 2 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 11 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 2 col: 12 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 2 col: 13 match: --a--
+action [143] { string.append(yytext()); }
+line: 2 col: 14 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 2 col: 15 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 2 col: 16 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 17 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 18 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 19 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 2 col: 20 match: --b--
+action [143] { string.append(yytext()); }
+line: 2 col: 21 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 2 col: 22 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 2 col: 23 match: -----
+action [105] { return symbol(sym.MINUS); }
+line: 2 col: 24 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 25 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 26 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 27 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 2 col: 28 match: --c--
+action [143] { string.append(yytext()); }
+line: 2 col: 29 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 2 col: 30 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 2 col: 31 match: --3--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 32 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 33 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 34 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 2 col: 35 match: --d--
+action [143] { string.append(yytext()); }
+line: 2 col: 36 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 2 col: 37 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 2 col: 38 match: -----
+action [105] { return symbol(sym.MINUS); }
+line: 2 col: 39 match: --4--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 40 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 41 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 42 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 2 col: 43 match: --e--
+action [143] { string.append(yytext()); }
+line: 2 col: 44 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 2 col: 45 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 2 col: 46 match: --5--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 47 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 2 col: 48 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 2 col: 49 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 3 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 3 col: 2 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 3 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 4 match: --\u000A\u000A--
+action [137] { /* do nothing */ }
+line: 5 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 5 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 5 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 5 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 5 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 5 col: 14 match: --\u000A\u000A   --
+action [137] { /* do nothing */ }
+line: 7 col: 4 match: --dict--
+action [51] { return symbol(sym.DICT_TYPE); }
+line: 7 col: 8 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 7 col: 9 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 7 col: 12 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 7 col: 13 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 7 col: 16 match: -->--
+action [91] { return symbol(sym.GREATTHAN); }
+line: 7 col: 17 match: -- --
+action [137] { /* do nothing */ }
+line: 7 col: 18 match: --d1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 7 col: 20 match: -- --
+action [137] { /* do nothing */ }
+line: 7 col: 21 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 7 col: 23 match: -- --
+action [137] { /* do nothing */ }
+line: 7 col: 24 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 7 col: 25 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 7 col: 26 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 7 col: 27 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 7 col: 28 match: --a--
+action [143] { string.append(yytext()); }
+line: 7 col: 29 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 7 col: 30 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 7 col: 31 match: -- --
+action [137] { /* do nothing */ }
+line: 7 col: 32 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 7 col: 33 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 7 col: 34 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 7 col: 35 match: --b--
+action [143] { string.append(yytext()); }
+line: 7 col: 36 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 7 col: 37 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 7 col: 38 match: -- --
+action [137] { /* do nothing */ }
+line: 7 col: 39 match: --3--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 7 col: 40 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 7 col: 41 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 7 col: 42 match: --c--
+action [143] { string.append(yytext()); }
+line: 7 col: 43 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 7 col: 44 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 7 col: 45 match: -- --
+action [137] { /* do nothing */ }
+line: 7 col: 46 match: --4--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 7 col: 47 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 7 col: 48 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 7 col: 49 match: --d--
+action [143] { string.append(yytext()); }
+line: 7 col: 50 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 7 col: 51 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 7 col: 52 match: -- --
+action [137] { /* do nothing */ }
+line: 7 col: 53 match: --5--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 7 col: 54 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 7 col: 55 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 7 col: 56 match: --e--
+action [143] { string.append(yytext()); }
+line: 7 col: 57 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 7 col: 58 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 7 col: 59 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 7 col: 60 match: --\u000A   --
+action [137] { /* do nothing */ }
+line: 8 col: 4 match: --dict--
+action [51] { return symbol(sym.DICT_TYPE); }
+line: 8 col: 8 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 8 col: 9 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 8 col: 12 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 8 col: 13 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 8 col: 16 match: -->--
+action [91] { return symbol(sym.GREATTHAN); }
+line: 8 col: 17 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 18 match: --d2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 8 col: 20 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 21 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 8 col: 23 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 24 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 8 col: 25 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 8 col: 26 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 8 col: 27 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 8 col: 28 match: --a--
+action [143] { string.append(yytext()); }
+line: 8 col: 29 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 8 col: 30 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 8 col: 31 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 32 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 8 col: 33 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 8 col: 34 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 8 col: 35 match: --b--
+action [143] { string.append(yytext()); }
+line: 8 col: 36 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 8 col: 37 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 8 col: 38 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 39 match: --3--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 8 col: 40 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 8 col: 41 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 8 col: 42 match: --c--
+action [143] { string.append(yytext()); }
+line: 8 col: 43 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 8 col: 44 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 8 col: 45 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 46 match: --4--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 8 col: 47 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 8 col: 48 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 8 col: 49 match: --d--
+action [143] { string.append(yytext()); }
+line: 8 col: 50 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 8 col: 51 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 8 col: 52 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 53 match: --5--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 8 col: 54 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 8 col: 55 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 8 col: 56 match: --e--
+action [143] { string.append(yytext()); }
+line: 8 col: 57 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 8 col: 58 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 8 col: 59 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 8 col: 60 match: --\u000A   --
+action [137] { /* do nothing */ }
+line: 9 col: 4 match: --dict--
+action [51] { return symbol(sym.DICT_TYPE); }
+line: 9 col: 8 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 9 col: 9 match: --top--
+action [53] { return symbol(sym.ANY_TYPE); }
+line: 9 col: 12 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 9 col: 13 match: --char--
+action [49] { return symbol(sym.CHAR_TYPE); }
+line: 9 col: 17 match: -->--
+action [91] { return symbol(sym.GREATTHAN); }
+line: 9 col: 18 match: -- --
+action [137] { /* do nothing */ }
+line: 9 col: 19 match: --d3--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 9 col: 21 match: -- --
+action [137] { /* do nothing */ }
+line: 9 col: 22 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 9 col: 24 match: -- --
+action [137] { /* do nothing */ }
+line: 9 col: 25 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 9 col: 26 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 9 col: 27 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 9 col: 28 match: --'a'--
+action [129] { return symbol(sym.CHAR, new Character(yytext().charAt(1))); }
+line: 9 col: 31 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 9 col: 32 match: -- --
+action [137] { /* do nothing */ }
+line: 9 col: 33 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 9 col: 34 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 9 col: 35 match: --'b'--
+action [129] { return symbol(sym.CHAR, new Character(yytext().charAt(1))); }
+line: 9 col: 38 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 9 col: 39 match: -- --
+action [137] { /* do nothing */ }
+line: 9 col: 40 match: --3.0--
+action [126] { return symbol(sym.FLOAT, new Double(yytext())); }
+line: 9 col: 43 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 9 col: 44 match: --'c'--
+action [129] { return symbol(sym.CHAR, new Character(yytext().charAt(1))); }
+line: 9 col: 47 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 9 col: 48 match: -- --
+action [137] { /* do nothing */ }
+line: 9 col: 49 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 9 col: 50 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 9 col: 51 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 9 col: 52 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 9 col: 53 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 9 col: 54 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 9 col: 55 match: --'d'--
+action [129] { return symbol(sym.CHAR, new Character(yytext().charAt(1))); }
+line: 9 col: 58 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 9 col: 59 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 9 col: 60 match: -- \u000A   --
+action [137] { /* do nothing */ }
+line: 10 col: 4 match: --dict--
+action [51] { return symbol(sym.DICT_TYPE); }
+line: 10 col: 8 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 10 col: 9 match: --char--
+action [49] { return symbol(sym.CHAR_TYPE); }
+line: 10 col: 13 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 10 col: 14 match: --top--
+action [53] { return symbol(sym.ANY_TYPE); }
+line: 10 col: 17 match: -->--
+action [91] { return symbol(sym.GREATTHAN); }
+line: 10 col: 18 match: -- --
+action [137] { /* do nothing */ }
+line: 10 col: 19 match: --d4--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 10 col: 21 match: -- --
+action [137] { /* do nothing */ }
+line: 10 col: 22 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 10 col: 24 match: -- --
+action [137] { /* do nothing */ }
+line: 10 col: 25 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 10 col: 26 match: --'a'--
+action [129] { return symbol(sym.CHAR, new Character(yytext().charAt(1))); }
+line: 10 col: 29 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 10 col: 30 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 10 col: 31 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 10 col: 32 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 10 col: 33 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 10 col: 34 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 10 col: 35 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 10 col: 36 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 10 col: 37 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 10 col: 38 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 10 col: 39 match: --3--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 10 col: 40 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 10 col: 41 match: --3--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 10 col: 42 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 10 col: 43 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 10 col: 44 match: -- --
+action [137] { /* do nothing */ }
+line: 10 col: 45 match: --'b'--
+action [129] { return symbol(sym.CHAR, new Character(yytext().charAt(1))); }
+line: 10 col: 48 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 10 col: 49 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 10 col: 50 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 10 col: 51 match: --x--
+action [143] { string.append(yytext()); }
+line: 10 col: 52 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 10 col: 53 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 10 col: 54 match: --4--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 10 col: 55 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 10 col: 56 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 10 col: 57 match: --y--
+action [143] { string.append(yytext()); }
+line: 10 col: 58 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 10 col: 59 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 10 col: 60 match: --5--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 10 col: 61 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 10 col: 62 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 10 col: 63 match: --z--
+action [143] { string.append(yytext()); }
+line: 10 col: 64 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 10 col: 65 match: --:--
+action [90] { return symbol(sym.COLON); }
+line: 10 col: 66 match: --6--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 10 col: 67 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 10 col: 68 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 10 col: 69 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 10 col: 70 match: -- --
+action [137] { /* do nothing */ }
+line: 10 col: 71 match: --# dict of dict\u000A--
+action [137] { /* do nothing */ }
+line: 11 col: 1 match: --\u000A   --
+action [137] { /* do nothing */ }
+line: 12 col: 4 match: --d1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 12 col: 6 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 12 col: 7 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 12 col: 8 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 12 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 12 col: 10 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 12 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 12 col: 13 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 12 col: 14 match: --f--
+action [143] { string.append(yytext()); }
+line: 12 col: 15 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 12 col: 16 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 12 col: 17 match: --\u000A   --
+action [137] { /* do nothing */ }
+line: 13 col: 4 match: --d2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 13 col: 6 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 13 col: 7 match: --5--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 13 col: 8 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 13 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 13 col: 10 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 13 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 13 col: 13 match: --d1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 13 col: 15 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 13 col: 16 match: --4--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 13 col: 17 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 13 col: 18 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 13 col: 19 match: --\u000A\u000A   --
+action [137] { /* do nothing */ }
+line: 15 col: 4 match: --if--
+action [60] { return symbol(sym.IF); }
+line: 15 col: 6 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 7 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 15 col: 8 match: --len--
+action [110] { return symbol(sym.LENGTH); }
+line: 15 col: 11 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 15 col: 12 match: --d3--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 15 col: 14 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 15 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 16 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 15 col: 17 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 18 match: --len--
+action [110] { return symbol(sym.LENGTH); }
+line: 15 col: 21 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 15 col: 22 match: --make_dict--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 15 col: 31 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 15 col: 32 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 15 col: 33 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 15 col: 34 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 35 match: --&&--
+action [102] { return symbol(sym.AND); }
+line: 15 col: 37 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 38 match: --5--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 15 col: 39 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 40 match: --?--
+action [116] { return symbol(sym.QUESTION); }
+line: 15 col: 41 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 42 match: --d4--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 15 col: 44 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 15 col: 45 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 46 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 15 col: 47 match: --\u000A      --
+action [137] { /* do nothing */ }
+line: 16 col: 7 match: --print--
+action [74] { return symbol(sym.PRINT); }
+line: 16 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 16 col: 13 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 16 col: 14 match: --Hello world!--
+action [143] { string.append(yytext()); }
+line: 16 col: 26 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 16 col: 27 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 16 col: 28 match: --\u000A   --
+action [137] { /* do nothing */ }
+line: 17 col: 4 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 17 col: 5 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 18 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 18 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 18 col: 3 match: --\u000A--
+action [137] { /* do nothing */ }
+Parsing successful.
+tests/open/p-return.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 1 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 14 match: -- \u000A  --
+action [137] { /* do nothing */ }
+line: 2 col: 3 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 2 col: 9 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 2 col: 10 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 3 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 3 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 3 match: --\u000A--
+action [137] { /* do nothing */ }
+Parsing successful.
+tests/open/p-loop.s
+line: 1 col: 1 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 1 col: 4 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 5 match: --s1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 8 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 1 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 11 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 1 col: 12 match: --Alice in Wonderland--
+action [143] { string.append(yytext()); }
+line: 1 col: 31 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 1 col: 32 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 1 col: 33 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 2 col: 1 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 2 col: 4 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 5 match: --s2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 8 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 2 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 11 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 2 col: 12 match: --Gilgamesh--
+action [143] { string.append(yytext()); }
+line: 2 col: 21 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 2 col: 22 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 2 col: 23 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 3 col: 1 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 3 col: 4 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 5 match: --s3--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 3 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 8 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 3 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 11 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 3 col: 12 match: --One Thousand and One Nights--
+action [143] { string.append(yytext()); }
+line: 3 col: 39 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 3 col: 40 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 41 match: --\u000A\u000A--
+action [137] { /* do nothing */ }
+line: 5 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 5 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 5 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 5 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 5 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 5 col: 14 match: --\u000A    --
+action [137] { /* do nothing */ }
+line: 6 col: 5 match: --seq--
+action [52] { return symbol(sym.SEQ_TYPE); }
+line: 6 col: 8 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 6 col: 9 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 6 col: 12 match: -->--
+action [91] { return symbol(sym.GREATTHAN); }
+line: 6 col: 13 match: -- --
+action [137] { /* do nothing */ }
+line: 6 col: 14 match: --books--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 6 col: 19 match: -- --
+action [137] { /* do nothing */ }
+line: 6 col: 20 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 6 col: 22 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 6 col: 23 match: --s1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 6 col: 25 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 6 col: 26 match: --s2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 6 col: 28 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 6 col: 29 match: --s3--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 6 col: 31 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 6 col: 32 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 6 col: 33 match: --\u000A    --
+action [137] { /* do nothing */ }
+line: 7 col: 5 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 7 col: 8 match: -- --
+action [137] { /* do nothing */ }
+line: 7 col: 9 match: --key--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 7 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 7 col: 13 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 7 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 7 col: 16 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 7 col: 17 match: --ic--
+action [143] { string.append(yytext()); }
+line: 7 col: 19 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 7 col: 20 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 7 col: 21 match: --  \u000A    --
+action [137] { /* do nothing */ }
+line: 8 col: 5 match: --bool--
+action [45] { return symbol(sym.BOOL_TYPE); }
+line: 8 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 10 match: --found--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 8 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 16 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 8 col: 18 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 19 match: --F--
+action [124] { return symbol(sym.FALSE); }
+line: 8 col: 20 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 8 col: 21 match: --\u000A    --
+action [137] { /* do nothing */ }
+line: 9 col: 5 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 9 col: 8 match: -- --
+action [137] { /* do nothing */ }
+line: 9 col: 9 match: --i--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 9 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 9 col: 11 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 9 col: 13 match: -- --
+action [137] { /* do nothing */ }
+line: 9 col: 14 match: --0--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 9 col: 15 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 9 col: 16 match: --\u000A    --
+action [137] { /* do nothing */ }
+line: 10 col: 5 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 10 col: 8 match: -- --
+action [137] { /* do nothing */ }
+line: 10 col: 9 match: --tmp--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 10 col: 12 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 10 col: 13 match: --\u000A\u000A    --
+action [137] { /* do nothing */ }
+line: 12 col: 5 match: --while--
+action [63] { return symbol(sym.WHILE); }
+line: 12 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 12 col: 11 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 12 col: 12 match: --\u000A        --
+action [137] { /* do nothing */ }
+line: 13 col: 9 match: --if--
+action [60] { return symbol(sym.IF); }
+line: 13 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 13 col: 12 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 13 col: 13 match: --i--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 13 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 13 col: 15 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 13 col: 16 match: -- --
+action [137] { /* do nothing */ }
+line: 13 col: 17 match: --len--
+action [110] { return symbol(sym.LENGTH); }
+line: 13 col: 20 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 13 col: 21 match: --books--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 13 col: 26 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 13 col: 27 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 13 col: 28 match: -- --
+action [137] { /* do nothing */ }
+line: 13 col: 29 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 13 col: 30 match: --\u000A            --
+action [137] { /* do nothing */ }
+line: 14 col: 13 match: --break--
+action [64] { return symbol(sym.BREAK); }
+line: 14 col: 18 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 14 col: 19 match: --\u000A        --
+action [137] { /* do nothing */ }
+line: 15 col: 9 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 15 col: 10 match: --\u000A        --
+action [137] { /* do nothing */ }
+line: 16 col: 9 match: --tmp--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 16 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 16 col: 13 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 16 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 16 col: 16 match: --books--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 16 col: 21 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 16 col: 22 match: --i--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 16 col: 23 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 16 col: 24 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 16 col: 25 match: --\u000A        --
+action [137] { /* do nothing */ }
+line: 17 col: 9 match: --if--
+action [60] { return symbol(sym.IF); }
+line: 17 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 12 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 17 col: 13 match: --key--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 17 col: 16 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 17 match: --=--
+action [113] { return symbol(sym.EQUAL); }
+line: 17 col: 18 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 19 match: --tmp--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 17 col: 22 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 17 col: 23 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 24 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 17 col: 25 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 26 match: --found--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 17 col: 31 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 32 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 17 col: 34 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 35 match: --T--
+action [123] { return symbol(sym.TRUE); }
+line: 17 col: 36 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 17 col: 37 match: -- --
+action [137] { /* do nothing */ }
+line: 17 col: 38 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 17 col: 39 match: --\u000A        --
+action [137] { /* do nothing */ }
+line: 18 col: 9 match: --i--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 18 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 18 col: 11 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 18 col: 13 match: -- --
+action [137] { /* do nothing */ }
+line: 18 col: 14 match: --i--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 18 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 18 col: 16 match: --+--
+action [104] { return symbol(sym.PLUS); }
+line: 18 col: 17 match: -- --
+action [137] { /* do nothing */ }
+line: 18 col: 18 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 18 col: 19 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 18 col: 20 match: --\u000A    --
+action [137] { /* do nothing */ }
+line: 19 col: 5 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 19 col: 6 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 20 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 20 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 20 col: 3 match: --\u000A--
+action [137] { /* do nothing */ }
+Parsing successful.
+tests/open/n-func-para-type.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 1 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 10 match: --fibonacci--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 19 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 20 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 21 match: --pos--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 24 match: --:--
+action [90] { return symbol(sym.COLON); }
+Syntax error at line 1, column 23.
+tests/open/p-if.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 1 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 10 match: --foo--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 13 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 14 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 1 col: 17 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 18 match: --pos--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 21 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 22 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 23 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 24 match: -- \u000A\u0009--
+action [137] { /* do nothing */ }
+line: 2 col: 2 match: --if--
+action [60] { return symbol(sym.IF); }
+line: 2 col: 4 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 5 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 2 col: 6 match: --pos--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 10 match: --=--
+action [113] { return symbol(sym.EQUAL); }
+line: 2 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 12 match: -----
+action [105] { return symbol(sym.MINUS); }
+line: 2 col: 13 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 2 col: 14 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 2 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 16 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 2 col: 17 match: --\u000A\u0009\u0009--
+action [137] { /* do nothing */ }
+line: 3 col: 3 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 3 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 10 match: --0--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 3 col: 11 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 12 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 4 col: 2 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 4 col: 3 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 5 col: 2 match: --else--
+action [62] { return symbol(sym.ELSE); }
+line: 5 col: 6 match: -- --
+action [137] { /* do nothing */ }
+line: 5 col: 7 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 5 col: 8 match: -- \u000A\u0009\u0009--
+action [137] { /* do nothing */ }
+line: 6 col: 3 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 6 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 6 col: 10 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 6 col: 11 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 6 col: 12 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 7 col: 2 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 7 col: 3 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 8 col: 2 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 8 col: 8 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 9 match: --add--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 8 col: 12 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 8 col: 13 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 14 match: --foo--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 8 col: 17 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 8 col: 18 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 19 match: --pos--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 8 col: 22 match: -----
+action [105] { return symbol(sym.MINUS); }
+line: 8 col: 23 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 8 col: 24 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 25 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 8 col: 26 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 8 col: 27 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 28 match: --foo--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 8 col: 31 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 8 col: 32 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 33 match: --pos--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 8 col: 36 match: -----
+action [105] { return symbol(sym.MINUS); }
+line: 8 col: 37 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 8 col: 38 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 39 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 8 col: 40 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 41 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 8 col: 42 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 8 col: 43 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 9 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 9 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 9 col: 3 match: --\u000A\u000A--
+action [137] { /* do nothing */ }
+line: 11 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 11 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 6 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 11 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 10 match: --add--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 11 col: 13 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 14 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 11 col: 15 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 11 col: 18 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 19 match: --x--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 11 col: 20 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 11 col: 21 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 22 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 11 col: 25 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 26 match: --y--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 11 col: 27 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 11 col: 28 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 29 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 11 col: 30 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 12 col: 2 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 12 col: 8 match: -- --
+action [137] { /* do nothing */ }
+line: 12 col: 9 match: --x--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 12 col: 10 match: -- --
+action [137] { /* do nothing */ }
+line: 12 col: 11 match: --+--
+action [104] { return symbol(sym.PLUS); }
+line: 12 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 12 col: 13 match: --y--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 12 col: 14 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 12 col: 15 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 13 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 13 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 13 col: 3 match: --\u000A\u000A--
+action [137] { /* do nothing */ }
+line: 15 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 15 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 15 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 15 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 15 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 15 col: 14 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 16 col: 2 match: --print--
+action [74] { return symbol(sym.PRINT); }
+line: 16 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 16 col: 8 match: --foo--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 16 col: 11 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 16 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 16 col: 13 match: --13--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 16 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 16 col: 16 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 16 col: 17 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 16 col: 18 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 17 col: 2 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 17 col: 8 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 17 col: 9 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 18 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 18 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 18 col: 3 match: --\u000A\u000A--
+action [137] { /* do nothing */ }
+Parsing successful.
+tests/open/p-char.s
+line: 1 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 1 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 1 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 1 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 14 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 2 col: 2 match: --char--
+action [49] { return symbol(sym.CHAR_TYPE); }
+line: 2 col: 6 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 7 match: --c1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 10 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 2 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 13 match: --'c'--
+action [129] { return symbol(sym.CHAR, new Character(yytext().charAt(1))); }
+line: 2 col: 16 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 2 col: 17 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 3 col: 2 match: --char--
+action [49] { return symbol(sym.CHAR_TYPE); }
+line: 3 col: 6 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 7 match: --c2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 3 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 10 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 3 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 3 col: 13 match: --c1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 3 col: 15 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 3 col: 16 match: --\u000A\u0009--
+action [137] { /* do nothing */ }
+line: 4 col: 2 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 4 col: 8 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 4 col: 9 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 5 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 5 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 5 col: 3 match: --\u000A--
+action [137] { /* do nothing */ }
+Parsing successful.
+tests/open/p-struct.s
+line: 1 col: 1 match: --tdef--
+action [69] { return symbol(sym.TDEF); }
+line: 1 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 6 match: --person--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 1 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 15 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 1 col: 18 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 19 match: --name--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 23 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 1 col: 24 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 25 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 1 col: 28 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 29 match: --surname--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 36 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 1 col: 37 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 38 match: --int--
+action [46] { return symbol(sym.INT_TYPE); }
+line: 1 col: 41 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 42 match: --age--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 1 col: 45 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 46 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 1 col: 47 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 1 col: 48 match: -- --
+action [137] { /* do nothing */ }
+line: 1 col: 49 match: --# person definition\u000A--
+action [137] { /* do nothing */ }
+line: 2 col: 1 match: --tdef--
+action [69] { return symbol(sym.TDEF); }
+line: 2 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 6 match: --family--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 2 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 15 match: --person--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 21 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 22 match: --mother--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 28 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 29 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 30 match: --person--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 36 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 37 match: --father--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 43 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 2 col: 44 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 45 match: --seq--
+action [52] { return symbol(sym.SEQ_TYPE); }
+line: 2 col: 48 match: --<--
+action [92] { return symbol(sym.LESSTHAN); }
+line: 2 col: 49 match: --person--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 55 match: -->--
+action [91] { return symbol(sym.GREATTHAN); }
+line: 2 col: 56 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 57 match: --children--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 2 col: 65 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 66 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 2 col: 67 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 2 col: 68 match: -- --
+action [137] { /* do nothing */ }
+line: 2 col: 69 match: --# family definition\u000A--
+action [137] { /* do nothing */ }
+line: 3 col: 1 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 4 col: 1 match: --fdef--
+action [68] { return symbol(sym.FDEF); }
+line: 4 col: 5 match: -- --
+action [137] { /* do nothing */ }
+line: 4 col: 6 match: --main--
+action [76] { return symbol(sym.MAIN); }
+line: 4 col: 10 match: --(--
+action [83] { return symbol(sym.LPAREN); }
+line: 4 col: 11 match: --)--
+action [84] { return symbol(sym.RPAREN); }
+line: 4 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 4 col: 13 match: --{--
+action [87] { return symbol(sym.LBRACE); }
+line: 4 col: 14 match: -- \u000A\u000A  --
+action [137] { /* do nothing */ }
+line: 6 col: 3 match: --# testing whether custom type accessor work properly\u000A--
+action [137] { /* do nothing */ }
+line: 7 col: 1 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 8 col: 3 match: --person--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 8 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 10 match: --m--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 8 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 12 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 8 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 15 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 8 col: 16 match: --aaaaAAA--
+action [143] { string.append(yytext()); }
+line: 8 col: 23 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 8 col: 24 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 8 col: 25 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 26 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 8 col: 27 match: --bbBB0_i--
+action [143] { string.append(yytext()); }
+line: 8 col: 34 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 8 col: 35 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 8 col: 36 match: -- --
+action [137] { /* do nothing */ }
+line: 8 col: 37 match: --40--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 8 col: 39 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 8 col: 40 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 9 col: 3 match: --person--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 9 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 9 col: 10 match: --f--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 9 col: 11 match: -- --
+action [137] { /* do nothing */ }
+line: 9 col: 12 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 9 col: 14 match: -- --
+action [137] { /* do nothing */ }
+line: 9 col: 15 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 9 col: 16 match: --aaabAAA--
+action [143] { string.append(yytext()); }
+line: 9 col: 23 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 9 col: 24 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 9 col: 25 match: -- --
+action [137] { /* do nothing */ }
+line: 9 col: 26 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 9 col: 27 match: --bbBB0_i--
+action [143] { string.append(yytext()); }
+line: 9 col: 34 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 9 col: 35 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 9 col: 36 match: -- --
+action [137] { /* do nothing */ }
+line: 9 col: 37 match: --35--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 9 col: 39 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 9 col: 40 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 10 col: 3 match: --person--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 10 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 10 col: 10 match: --c1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 10 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 10 col: 13 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 10 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 10 col: 16 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 10 col: 17 match: --aaabAAA--
+action [143] { string.append(yytext()); }
+line: 10 col: 24 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 10 col: 25 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 10 col: 26 match: -- --
+action [137] { /* do nothing */ }
+line: 10 col: 27 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 10 col: 28 match: --bbBB0_i--
+action [143] { string.append(yytext()); }
+line: 10 col: 35 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 10 col: 36 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 10 col: 37 match: -- --
+action [137] { /* do nothing */ }
+line: 10 col: 38 match: --1--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 10 col: 39 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 10 col: 40 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 11 col: 3 match: --person--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 11 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 10 match: --c2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 11 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 13 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 11 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 16 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 11 col: 17 match: --aaadAAA--
+action [143] { string.append(yytext()); }
+line: 11 col: 24 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 11 col: 25 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 11 col: 26 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 27 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 11 col: 28 match: --bbBB0_i--
+action [143] { string.append(yytext()); }
+line: 11 col: 35 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 11 col: 36 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 11 col: 37 match: -- --
+action [137] { /* do nothing */ }
+line: 11 col: 38 match: --2--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 11 col: 39 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 11 col: 40 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 12 col: 3 match: --person--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 12 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 12 col: 10 match: --c3--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 12 col: 12 match: -- --
+action [137] { /* do nothing */ }
+line: 12 col: 13 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 12 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 12 col: 16 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 12 col: 17 match: --aaaeAAA--
+action [143] { string.append(yytext()); }
+line: 12 col: 24 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 12 col: 25 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 12 col: 26 match: -- --
+action [137] { /* do nothing */ }
+line: 12 col: 27 match: --"--
+action [130] { string.setLength(0); yybegin(STRING); }
+line: 12 col: 28 match: --bbBB0_i--
+action [143] { string.append(yytext()); }
+line: 12 col: 35 match: --"--
+action [142] { yybegin(YYINITIAL); return symbol(sym.STRING, string.toString()); }
+line: 12 col: 36 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 12 col: 37 match: -- --
+action [137] { /* do nothing */ }
+line: 12 col: 38 match: --3--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 12 col: 39 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 12 col: 40 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 13 col: 3 match: --str--
+action [50] { return symbol(sym.STR_TYPE); }
+line: 13 col: 6 match: -- --
+action [137] { /* do nothing */ }
+line: 13 col: 7 match: --s--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 13 col: 8 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 13 col: 9 match: --\u000A\u000A  --
+action [137] { /* do nothing */ }
+line: 15 col: 3 match: --family--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 15 col: 9 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 10 match: --fam--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 15 col: 13 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 14 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 15 col: 16 match: -- --
+action [137] { /* do nothing */ }
+line: 15 col: 17 match: --m--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 15 col: 18 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 15 col: 19 match: --f--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 15 col: 20 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 15 col: 21 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 15 col: 22 match: --c1--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 15 col: 24 match: --,--
+action [93] { return symbol(sym.COMMA); }
+line: 15 col: 25 match: --c2--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 15 col: 27 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 15 col: 28 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 15 col: 29 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 16 col: 3 match: --fam--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 16 col: 6 match: --.--
+action [94] { return symbol(sym.DOT); }
+line: 16 col: 7 match: --children--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 16 col: 15 match: -- --
+action [137] { /* do nothing */ }
+line: 16 col: 16 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 16 col: 18 match: -- --
+action [137] { /* do nothing */ }
+line: 16 col: 19 match: --fam--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 16 col: 22 match: --.--
+action [94] { return symbol(sym.DOT); }
+line: 16 col: 23 match: --children--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 16 col: 31 match: -- --
+action [137] { /* do nothing */ }
+line: 16 col: 32 match: --+--
+action [104] { return symbol(sym.PLUS); }
+line: 16 col: 33 match: -- --
+action [137] { /* do nothing */ }
+line: 16 col: 34 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 16 col: 35 match: --c3--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 16 col: 37 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 16 col: 38 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 16 col: 39 match: --\u000A  \u000A  --
+action [137] { /* do nothing */ }
+line: 18 col: 3 match: --s--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 18 col: 4 match: -- --
+action [137] { /* do nothing */ }
+line: 18 col: 5 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 18 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 18 col: 8 match: --fam--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 18 col: 11 match: --.--
+action [94] { return symbol(sym.DOT); }
+line: 18 col: 12 match: --mother--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 18 col: 18 match: --.--
+action [94] { return symbol(sym.DOT); }
+line: 18 col: 19 match: --surname--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 18 col: 26 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 18 col: 27 match: --\u000A  --
+action [137] { /* do nothing */ }
+line: 19 col: 3 match: --s--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 19 col: 4 match: -- --
+action [137] { /* do nothing */ }
+line: 19 col: 5 match: --:=--
+action [115] { return symbol(sym.ASSIGN); }
+line: 19 col: 7 match: -- --
+action [137] { /* do nothing */ }
+line: 19 col: 8 match: --fam--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 19 col: 11 match: --.--
+action [94] { return symbol(sym.DOT); }
+line: 19 col: 12 match: --children--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 19 col: 20 match: --[--
+action [85] { return symbol(sym.LBRACK); }
+line: 19 col: 21 match: --0--
+action [128] { return symbol(sym.INT, new Integer(yytext())); }
+line: 19 col: 22 match: --]--
+action [86] { return symbol(sym.RBRACK); }
+line: 19 col: 23 match: --.--
+action [94] { return symbol(sym.DOT); }
+line: 19 col: 24 match: --name--
+action [125] { return symbol(sym.ID, yytext()); }
+line: 19 col: 28 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 19 col: 29 match: --\u000A\u000A  --
+action [137] { /* do nothing */ }
+line: 21 col: 3 match: --return--
+action [75] { return symbol(sym.RETURN); }
+line: 21 col: 9 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 21 col: 10 match: --\u000A--
+action [137] { /* do nothing */ }
+line: 22 col: 1 match: --}--
+action [88] { return symbol(sym.RBRACE); }
+line: 22 col: 2 match: --;--
+action [89] { return symbol(sym.SEMICOLON); }
+line: 22 col: 3 match: --\u000A--
+action [137] { /* do nothing */ }
+Parsing successful.
